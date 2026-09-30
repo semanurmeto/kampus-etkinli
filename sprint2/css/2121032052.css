@@ -1,0 +1,80 @@
+/* Semanur Meto 2121032052 */
+:root {
+  --no: 2121032052;
+  --ton: mod(var(--no), 360);
+  --renk-ana: hsl(var(--ton) 65% 38%);
+  --renk-zemin: hsl(var(--ton) 30% 97%);
+  --font: Tahoma, sans-serif;
+  --bosluk-m: 1rem;
+  --kose: 8px;
+}
+
+body {
+  font-family: var(--font);
+}
+/* Kartların Taşıyıcısı (Mobil Öncelikli: Tek Sütun) */
+.etkinlik-vitrini {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--bosluk-m);
+}
+
+/* Tekil Kartın Görünümü */
+.kart {
+  background-color: var(--renk-zemin);
+  border: 2px solid var(--renk-ana);
+  border-radius: var(--kose);
+  padding: var(--bosluk-m);
+}
+
+/* Geniş Ekran (Bilgisayar) Görünümü */
+@media (min-width: 768px) {
+  .etkinlik-vitrini {
+    grid-template-columns: 1fr 1fr; /* Bilgisayarda yan yana 2 sütun */
+  }
+}
+/* Tüm Etkinlikler Sayfası İçin (Mobil: Tek Sütun) */
+.etkinlik-vitrini-uc-sutun {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--bosluk-m);
+}
+
+/* Bilgisayarda 3 Sütun */
+@media (min-width: 768px) {
+  .etkinlik-vitrini-uc-sutun {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+/* Form Elemanları */
+form div {
+  margin-bottom: var(--bosluk-m);
+}
+
+label {
+  display: block; /* Label'ın üstte durmasını sağlar */
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Hatalı Alan Kırmızı Kuralı */
+input:invalid, select:invalid, textarea:invalid {
+  border: 2px solid red;
+}
+
+/* Kaydet/Güncelle Butonu */
+button {
+  background-color: var(--renk-ana);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: var(--kose);
+  cursor: pointer;
+}
