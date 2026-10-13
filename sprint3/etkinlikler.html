@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tüm Etkinlikler - Kampüs Etkinlikleri</title>
+    <link rel="stylesheet" href="css/2121032052.css">
+    <!-- JavaScript dosyamızı ekledik -->
+    <script type="module" src="js/event-list.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Kampüs Etkinlikleri</h1>
+        <nav>
+            <a href="index.html">Ana Sayfa</a> 
+            <a href="etkinlikler.html">Etkinlikler</a> 
+            <a href="etkinlik-ekle.html">Ekle</a> 
+            <!-- Güncelle linki PDF kuralı gereği menüden silindi -->
+        </nav>
+    </header>
+
+    <br>
+
+    <main>
+        <h2>Tüm Etkinlikler</h2>
+<!-- ADIM 6: Filtre Alanı -->
+        <form id="filtre-formu" class="filtre">
+            <div>
+                <label for="arama">Etkinlik ara</label>
+                <input type="search" id="arama" placeholder="Örn: atölye, kariyer...">
+            </div>
+            <div>
+                <label for="kategori-filtre">Kategori</label>
+                <select id="kategori-filtre">
+                    <option value="">Tümü</option>
+                </select>
+            </div>
+        </form>
+        <p id="sonuc"></p>
+        <!-- Senin orijinal 3 sütunlu class'ın kaldı, id eklendi ve içi boşaltıldı -->
+        <section id="etkinlik-listesi" class="etkinlik-vitrini-uc-sutun">
+        </section>
+    </main>
+
+    <br>
+
+    <footer>
+        <p>Semanur Meto · 2026</p>
+    </footer>
+</body>
+</html>

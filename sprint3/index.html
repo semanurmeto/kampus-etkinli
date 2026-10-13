@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampüs Etkinlikleri</title>
+    <link rel="stylesheet" href="css/2121032052.css">
+    <!-- JavaScript dosyamızı ekledik -->
+    <script type="module" src="js/event-list.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Kampüs Etkinlikleri</h1>
+        <nav>
+            <a href="index.html">Ana Sayfa</a> 
+            <a href="etkinlikler.html">Etkinlikler</a> 
+            <a href="etkinlik-ekle.html">Ekle</a> 
+            <!-- Güncelle linki PDF kuralı gereği menüden silindi -->
+        </nav>
+    </header>
+
+    <br>
+
+    <main>
+        <p>Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin.</p>
+
+        <h2>Yaklaşan 2 etkinlik</h2>
+
+        <!-- Senin orijinal class'ın kaldı, id eklendi ve içi boşaltıldı -->
+        <section id="etkinlik-listesi" class="etkinlik-vitrini" data-limit="2">
+        </section>
+
+        <br>
+        <a href="etkinlikler.html">Tüm etkinlikleri gör →</a>
+    </main>
+
+    <br>
+
+    <footer>
+        <p>Semanur Meto · 2026</p>
+    </footer>
+</body>
+</html>
