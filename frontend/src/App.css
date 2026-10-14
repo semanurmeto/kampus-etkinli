@@ -1,0 +1,198 @@
+/* Semanur Meto 2121032052 */
+:root {
+  --no: 2121032052;
+  --ton: mod(var(--no), 360);
+  --renk-ana: hsl(var(--ton) 65% 38%);
+  --renk-zemin: hsl(var(--ton) 30% 97%);
+  --font: Tahoma, sans-serif;
+  --bosluk-m: 1rem;
+  --kose: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* --- BAŞLIK (HEADER) --- */
+.site-baslik {
+  background-color: var(--renk-ana);
+  color: white;
+  padding: 1.5rem var(--bosluk-m);
+  text-align: center;
+}
+
+.site-baslik h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.site-baslik p {
+  margin: 10px 0 0 0;
+  opacity: 0.9;
+}
+
+/* --- MENÜ (NAV) --- */
+.menu {
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: var(--kose);
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover {
+  background-color: #555;
+}
+
+.menu a.aktif {
+  background-color: var(--renk-ana);
+}
+
+/* --- ANA İÇERİK --- */
+main {
+  padding: var(--bosluk-m);
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+/* Kartların Taşıyıcısı (Mobil Öncelikli: Tek Sütun) */
+.etkinlik-vitrini {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--bosluk-m);
+}
+
+/* Tekil Kartın Görünümü */
+.kart {
+  background-color: var(--renk-zemin);
+  border: 2px solid var(--renk-ana);
+  border-radius: var(--kose);
+  padding: var(--bosluk-m);
+  transition: transform 0.2s;
+}
+
+.kart:hover {
+  transform: translateY(-5px);
+}
+
+.kart h2 {
+  margin-top: 0;
+  color: var(--renk-ana);
+}
+
+.kart a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--renk-ana);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.kart a:hover {
+  text-decoration: underline;
+}
+
+/* Geniş Ekran (Bilgisayar) Görünümü */
+@media (min-width: 768px) {
+  .etkinlik-vitrini {
+    grid-template-columns: 1fr 1fr; /* Bilgisayarda yan yana 2 sütun */
+  }
+}
+
+/* Tüm Etkinlikler Sayfası İçin (Mobil: Tek Sütun) */
+.etkinlik-vitrini-uc-sutun {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--bosluk-m);
+}
+
+/* Bilgisayarda 3 Sütun */
+@media (min-width: 768px) {
+  .etkinlik-vitrini-uc-sutun {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* --- FORM ELEMANLARI --- */
+form div {
+  margin-bottom: var(--bosluk-m);
+}
+
+label {
+  display: block; 
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+/* Hatalı Alan Kırmızı Kuralı */
+input:invalid, select:invalid, textarea:invalid {
+  border: 2px solid red;
+}
+
+/* Kaydet/Güncelle Butonu */
+button {
+  background-color: var(--renk-ana);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--kose);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Filtre formu mobilde alt alta, bilgisayarda yan yana */
+.filtre {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--bosluk-m);
+    background-color: var(--renk-zemin);
+    padding: var(--bosluk-m);
+    border-radius: var(--kose);
+    border: 1px solid var(--renk-ana);
+    margin-bottom: var(--bosluk-m);
+}
+
+@media (min-width: 768px) {
+    .filtre {
+        grid-template-columns: 3fr 1fr; 
+    }
+}
+
+/* --- ALT BİLGİ (FOOTER) --- */
+footer {
+  background-color: var(--renk-ana);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
