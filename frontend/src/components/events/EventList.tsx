@@ -3,11 +3,10 @@ import EventCard from "./EventCard";
 
 interface EventListProps {
   events: CampusEvent[];
-  onShowDetail: (id: string) => void;
   emptyText?: string;
 }
 
-export default function EventList({ events, onShowDetail, emptyText = "Sonuç bulunamadı." }: EventListProps) {
+export default function EventList({ events, emptyText = "Sonuç bulunamadı." }: EventListProps) {
   if (events.length === 0) {
     return <p className="sonuc">{emptyText}</p>;
   }
@@ -15,7 +14,7 @@ export default function EventList({ events, onShowDetail, emptyText = "Sonuç bu
   return (
     <>
       {events.map((event) => (
-        <EventCard key={event.id} event={event} onShowDetail={onShowDetail} />
+        <EventCard key={event.id} event={event} />
       ))}
     </>
   );
