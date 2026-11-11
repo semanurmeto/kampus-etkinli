@@ -1,3 +1,4 @@
+// Kampus Etkinlik API - Ana Sunucu Dosyasi
 import "dotenv/config";
 import app from "./app.js";
 
